@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dima/workspace/ip_filter/lib.h
+
+/home/dima/workspace/ip_filter/test_version.cpp
+lib.h
+/home/dima/workspace/ip_filter/lib.h
+boost/test/unit_test.hpp
+-
+

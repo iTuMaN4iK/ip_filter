@@ -1,0 +1,12 @@
+/home/dima/workspace/ip_filter/build/CMakeFiles/install/strip.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/install.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/list_install_components.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/rebuild_cache.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/edit_cache.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/install/local.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/test.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/test_version.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/vers.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/package.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/ip_filter.dir
+/home/dima/workspace/ip_filter/build/CMakeFiles/package_source.dir
