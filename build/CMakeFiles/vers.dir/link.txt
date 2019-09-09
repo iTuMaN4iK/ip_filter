@@ -1,2 +1,0 @@
-/usr/bin/ar qc libvers.a  CMakeFiles/vers.dir/lib.cpp.o
-/usr/bin/ranlib libvers.a
