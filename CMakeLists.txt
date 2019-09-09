@@ -21,10 +21,10 @@ set_target_properties(ip_filter vers test_version PROPERTIES
 target_include_directories(vers
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
-include_directories(
-    ../include
-    ${GTEST_INCLUDE_DIRS}
-)
+#include_directories(
+#    ../include
+#    ${GTEST_INCLUDE_DIRS}
+#)
 set_target_properties(test_version PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
     INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
@@ -38,8 +38,7 @@ target_link_libraries(test_version
     vers
 )
 target_link_libraries(
-    test_filter_first ${GTEST_LIBRARIES} Threads::Threads
-)
+    test_filter_first ${GTEST_LIBRARIES} Threads::Threads)
 
 if (MSVC)
     target_compile_options(ip_filter PRIVATE
