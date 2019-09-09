@@ -66,7 +66,10 @@ int main(int argc, char const *argv[])
         std::sort(ip_pool.begin(),ip_pool.end(),[](const ip_type& a,const ip_type& b){
             if (a[0]==b[0]){
                 if (a[1]==b[1]){
-                    return std::stoi(a[2])>std::stoi(b[2]);
+                    if (a[2]==b[2]){
+                        return std::stoi(a[3])>std::stoi(b[3]);
+                    }
+                    return std::stoi(a[2])>std::stoi(b[2]);                    
                 }
                 return std::stoi(a[1])>std::stoi(b[1]);
             }
@@ -74,7 +77,6 @@ int main(int argc, char const *argv[])
         });
 
         printIpPool(ip_pool);
-        printf("++++++++++++\n");
         // 222.173.235.246
         // 222.130.177.64
         // 222.82.198.61
@@ -95,7 +97,6 @@ int main(int argc, char const *argv[])
         };
         auto ip = filterFirst(1);
         printIpPool(ip);
-        printf("++++++++++++\n");
         // 1.231.69.33
         // 1.87.203.225
         // 1.70.44.170
@@ -114,7 +115,6 @@ int main(int argc, char const *argv[])
         };
         ip = filter(46, 70);
         printIpPool(ip);
-        printf("++++++++++++\n");
         ip.clear();
         auto filterAny = [&ip_pool](int any){
             ip_pool_type ip{};

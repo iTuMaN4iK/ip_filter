@@ -4,12 +4,15 @@ project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 #project(ip_filter VERSION 0.0.1)
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+find_package(GTest REQUIRED)
 
 configure_file(version.h.in version.h)
 
 add_executable(ip_filter main.cpp)
 add_library(vers lib.cpp)
 add_executable(test_version test_version.cpp)
+add_executable(test_filter_first test_filter_first.cpp)
+
 
 set_target_properties(ip_filter vers test_version PROPERTIES
     CXX_STANDARD 14
@@ -17,6 +20,10 @@ set_target_properties(ip_filter vers test_version PROPERTIES
 )
 target_include_directories(vers
     PRIVATE "${CMAKE_BINARY_DIR}"
+)
+include_directories(
+    ../include
+    ${GTEST_INCLUDE_DIRS}
 )
 set_target_properties(test_version PROPERTIES
     COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
@@ -30,6 +37,9 @@ target_link_libraries(test_version
     ${Boost_LIBRARIES}
     vers
 )
+target_link_libraries(
+    test_filter_first ${GTEST_LIBRARIES} Threads::Threads
+)
 
 if (MSVC)
     target_compile_options(ip_filter PRIVATE
@@ -41,6 +51,9 @@ if (MSVC)
     target_compile_options(test_version PRIVATE
         /W4
     )
+    target_compile_options(test_filter_first PRIVATE
+        -Wall -Wextra -pedantic 
+    )
 else ()
     target_compile_options(ip_filter PRIVATE
         -Wall -Wextra -pedantic 
@@ -49,6 +62,9 @@ else ()
         -Wall -Wextra -pedantic 
     )
     target_compile_options(test_version PRIVATE
+        -Wall -Wextra -pedantic 
+    )
+    target_compile_options(test_filter_first PRIVATE
         -Wall -Wextra -pedantic 
     )
 endif()
@@ -70,3 +86,6 @@ include(CPack)
 enable_testing()
 
 add_test(test_version test_version)
+add_test(test_filter_first test_filter_first)
+
+
