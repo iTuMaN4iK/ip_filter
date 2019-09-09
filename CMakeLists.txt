@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-
+ 
 project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 #project(ip_filter VERSION 0.0.1)
 
@@ -14,7 +14,7 @@ add_executable(test_version test_version.cpp)
 add_executable(test_filter test_filter.cpp)
 
 
-set_target_properties(ip_filter vers test_version PROPERTIES
+set_target_properties(ip_filter vers test_version test_filter PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )

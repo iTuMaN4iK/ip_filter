@@ -5,6 +5,7 @@
 
 using ip_pool_type =std::vector<std::vector<std::string> >;
 using ip_type = std::vector<std::string> ;
+
 ip_type split(const std::string &str, char d)
 {
     ip_type r;
