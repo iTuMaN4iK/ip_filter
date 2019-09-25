@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
  
-project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
-#project(ip_filter VERSION 0.0.1)
+# project(ip_filter VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(ip_filter VERSION 0.0.1)
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 find_package(GTest REQUIRED)
@@ -34,7 +34,8 @@ target_link_libraries(test_version
     vers
 )
 target_link_libraries(
-    test_filter ${GTEST_LIBRARIES} Threads::Threads)
+    test_filter ${GTEST_LIBRARIES} Threads::Threads
+)
 
 if (MSVC)
     target_compile_options(ip_filter PRIVATE
